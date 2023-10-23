@@ -1392,8 +1392,8 @@ HFONT GetUserGuiFont(int size, int weightOffset, char* fontName) {
     if (fontName && !str::EqI(fontName, "automatic")) {
         TempWstr fontNameW = ToWstrTemp(fontName);
         WCHAR* dest = ncm.lfMessageFont.lfFaceName;
-        int cchDestBufSize = dimof(ncm.lfMessageFont.lfFaceName);
-        StrCatBuffW(dest, fontNameW, cchDestBufSize);
+        size_t cchDestBufSize = dimof(ncm.lfMessageFont.lfFaceName);
+        StringCchCopyW(dest, cchDestBufSize, fontNameW);
     }
     ncm.lfMessageFont.lfWeight += weightOffset;
     HFONT fnt = CreateFontIndirectW(&ncm.lfMessageFont);

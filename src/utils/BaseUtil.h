@@ -87,6 +87,7 @@
 #include <windows.h>
 #include <unknwn.h>
 #include <shlwapi.h>
+#include <strsafe.h>
 #include <shlobj.h>
 #include <commctrl.h>
 #include <windowsx.h>
